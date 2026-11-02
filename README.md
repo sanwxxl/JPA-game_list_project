@@ -27,7 +27,7 @@
 > 패키지 구조:entity, repository, dto, service, controller / JDK17 / Spring Boot 4.1.2 / Dbeaver 사용
 
 ** IntelliJ 프로젝트 폴더 구조**
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 ---
 
@@ -36,7 +36,7 @@
 ### 기존 Table 조회 및 데이터 추가
 > games 테이블에 위에 작성한 entity필드 구조대로 데이터를 집어넣었다.
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 
 ### 새 Table 생성
@@ -58,17 +58,17 @@ VALUES ('Elden Ring', 'RPG', 'PC', 64800, 2022, 9.5),
 ('Stardew Valley', 'Simulation', 'PC', 16000, 2016, 9.2),
 ('Minecraft', 'Sandbox', 'PC', 30000, 2011, 9.0);
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 ### UPDATE
 > UPDATE games SET rating = 9.3 WHERE title = 'Minecraft'; --> rating 값을 9.3으로 변경함
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 
 ### DELETE
 > DELETE FROM games WHERE title = 'Stardew Valley'; --> 이름이 Stardew Valley인 데이터 삭제
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
 ### SELECT
 > SELECT * FROM games;
@@ -76,7 +76,7 @@ SELECT title, price FROM games;
 SELECT * FROM games WHERE genre = 'RPG';
 
 **[캡처] SELECT 3번째 결과**
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
 ---
 
