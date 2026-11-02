@@ -118,7 +118,7 @@ SELECT * FROM games WHERE genre = 'RPG';
   "releaseYear": 2020,
   "rating": 8.8
 }
-
+```
 ### JPA Entity와 MariaDB Table 비교
 > 자바 필드의 CamelCase가 DB의 SnakeCase로 자동 전환됨.
 
