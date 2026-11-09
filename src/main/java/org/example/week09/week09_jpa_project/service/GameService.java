@@ -50,6 +50,33 @@ public class GameService {
         return new GameResponse(game);
     }
 
+    public List<GameResponse> findByGenre(String genre) {
+        List<Game> games = gameRepository.findByGenre(genre);
+        List<GameResponse> result = new ArrayList<>();
+        for (Game game : games) {
+            result.add(new GameResponse(game));
+        }
+        return result;
+    }
+
+    public List<GameResponse> findByGenreAndPlatform(String genre, String platform) {
+        List<Game> games = gameRepository.findByGenreAndPlatform(genre, platform);
+        List<GameResponse> result = new ArrayList<>();
+        for (Game game : games) {
+            result.add(new GameResponse(game));
+        }
+        return result;
+    }
+
+    public List<GameResponse> findByPlatformSortByRating(String platform) {
+        List<Game> games = gameRepository.findByPlatformOrderByRatingDesc(platform);
+        List<GameResponse> result = new ArrayList<>();
+        for (Game game : games) {
+            result.add(new GameResponse(game));
+        }
+        return result;
+    }
+
     //Q8: 트랜젝션 안에서 동작하는것이 dirty checking 이고, 조회한 entity의 값만 바꾸기만 해도 JPA가 자동으로 업데이트 해주는 기능이다. 따로 save를 다시 호출할 필요가 없다.
     public GameResponse update(Long id, GameRequest request) {
         Game game = findGame(id);

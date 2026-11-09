@@ -32,6 +32,22 @@ public class GameController {
         return gameService.findById(id);
     }
 
+    @GetMapping("/search/genre")
+    public List<GameResponse> findByGenre(@RequestParam String genre) {
+        return gameService.findByGenre(genre);
+    }
+
+    @GetMapping("/search/genre-platform")
+    public List<GameResponse> findByGenreAndPlatform(@RequestParam String genre, @RequestParam String platform) {
+        return gameService.findByGenreAndPlatform(genre, platform);
+    }
+
+    @GetMapping("/search/platform-rating")
+    public List<GameResponse> findByPlatformSortByRating(@RequestParam String platform) {
+        return gameService.findByPlatformSortByRating(platform);
+    }
+
+
     @PutMapping("/{id}")
     public GameResponse update(@PathVariable Long id, @RequestBody GameRequest request) {
         return gameService.update(id, request);
