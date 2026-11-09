@@ -6,6 +6,7 @@ import org.example.week09.week09_jpa_project.entity.Game;
 import org.example.week09.week09_jpa_project.repository.GameRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -77,6 +78,7 @@ public class GameService {
         return result;
     }
 
+    @Transactional
     //Q8: 트랜젝션 안에서 동작하는것이 dirty checking 이고, 조회한 entity의 값만 바꾸기만 해도 JPA가 자동으로 업데이트 해주는 기능이다. 따로 save를 다시 호출할 필요가 없다.
     public GameResponse update(Long id, GameRequest request) {
         Game game = findGame(id);
@@ -86,8 +88,7 @@ public class GameService {
         game.setPrice(request.getPrice());
         game.setReleaseYear(request.getReleaseYear());
         game.setRating(request.getRating());
-        Game saved = gameRepository.save(game);
-        return new GameResponse(saved);
+        return new GameResponse(game);
     }
 
     public void delete(Long id) {
