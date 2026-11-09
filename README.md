@@ -1,4 +1,4 @@
-# (프로젝트 제목)
+# Java jpa-gameProject
 
 - GitHub Repository: https://github.com/2026-2-WebService/assign09-c01-22500091.git
 - Render Deployment: https://jpa-gamecrud.onrender.com
